@@ -1,0 +1,19 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: hello-world-api
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka
+
+sentry:
+  dsn: http://e04131b70baa40a78a13cdf2585c48ed@127.0.0.1:9000/1
+  # Set traces-sample-rate to 1.0 to capture 100% of transactions for performance monitoring.
+  # We recommend adjusting this value in production.
+  traces-sample-rate: 1.0

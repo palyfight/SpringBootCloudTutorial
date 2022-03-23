@@ -1,0 +1,23 @@
+server:
+  port: 8091
+
+spring:
+  application:
+    name: zuul-gateway
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka
+  instance:
+    preferIpAddress: true
+
+zuul:
+  routes:
+    helloWorldApi:
+#      url: http://localhost:8092
+      path: /example/**
+      serviceId: hello-world-api
+      stripPrefix: false
